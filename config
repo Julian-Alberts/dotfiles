@@ -1,0 +1,5 @@
+.vimrc;~/.vimrc
+.zshrc;~/.zshrc
+i3_config;~/.config/i3/config
+i3_status_bar.toml;~/.config/i3/status.toml
+i3_notify_bar_rules.conf;~/.config/i3/rules.conf
