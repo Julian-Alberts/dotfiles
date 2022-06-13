@@ -104,3 +104,5 @@ setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
 alias vim=nvim
 alias dtfs=~/dotfiles/dotfiles-tools/dtfs.py
+alias mount=udisksctl mount -b 
+alias umount=udisksctl unmount -b 

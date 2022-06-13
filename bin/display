@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+screens=$(xrandr | tail -n +2 | grep -e '^[a-zA-Z]')
+
+for i in $screens
+do
+    echo "$i"
+done
