@@ -102,7 +102,13 @@ alias ls="${aliases[ls]:-ls} -A"
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
+export ZSH_AUTOSUGGEST_STRATEGY=(history)
+
 alias vim=nvim
 alias dtfs=~/dotfiles/dotfiles-tools/dtfs.py
 alias mount=udisksctl mount -b 
 alias umount=udisksctl unmount -b 
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
