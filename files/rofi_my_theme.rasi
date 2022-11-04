@@ -1,19 +1,105 @@
+/**
+ * rofi -dump-theme output.
+ * Rofi version: 1.7.5
+ **/
 * {
-    //background-color: transparent;
+    background-color: transparent;
+    text-color:       White;
 }
-
 window {
+    padding:          1.0000em ;
+    width:            1024px ;
+    background-color: transparent;
+}
+mainbox {
+    spacing:  0px ;
+    background-color: transparent;
+    children: [ "inputbar","wrapper-mode-switcher","listview" ];
+}
+element {
+    padding:     10px ;
+    background:  red;
+    cursor:      pointer;
     orientation: vertical;
-    content: [prompt, tabs, listview];
-    background: white;
+    font:        "Mono 8";
+    children:    [ "element-icon","element-text" ];
 }
-
-prompt {}
-
-tabs {
+element selected {
+    background-color: LightGray/20%;
 }
-
+element-text {
+    cursor:           pointer;
+    font:             inherit;
+    horizontal-align: 0.50;
+}
+element-icon {
+    size:             6.0000em ;
+    cursor:           pointer;
+    font:             inherit;
+    horizontal-align: 0.50;
+}
+button {
+    horizontal-align: 0.50;
+    text-color:       White;
+    cursor:           pointer;
+    background-color: Black/35%;
+    border-radius:    10px 10px 0px 0px ;
+}
+button selected.normal {
+    text-color:       White;
+    background-color: Black/70%;
+}
+inputbar {
+    padding:          0.5000em ;
+    children:         [ "entry","overlay","case-indicator" ];
+    lines:            4;
+    margin:           0px 0px 1.0000em 0.0000em ;
+    background-color: Black/70%;
+    columns:          4;
+    spacing:          0.4000em ;
+}
 listview {
-    color: Red;
+    padding:          0.5000em ;
+    background-color: Black/70%;
+    columns:          4;
+    lines:            4;
+    border:           0px 5px 5px ;
+    border-radius:    0px 0px 10px 10px ;
 }
-
+message {
+    padding:          0.5000em ;
+    background-color: Black/70%;
+    columns:          4;
+    lines:            4;
+    border:           5px ;
+    border-radius:    10px ;
+}
+wrapper-mode-switcher {
+    orientation: horizontal;
+    expand:      false;
+    spacing:     0;
+    children:    [ "icon-ms-ic1","mode-switcher","icon-ms-ic2" ];
+}
+icon-ms-ic1 {
+    action:         "kb-mode-previous";
+    filename:       "go-previous";
+    size:           16;
+    vertical-align: 0.80;
+    expand:         false;
+    border:         0px 0px 5px ;
+}
+icon-ms-ic2 {
+    action:         "kb-mode-next";
+    filename:       "go-next";
+    size:           16;
+    vertical-align: 0.80;
+    expand:         false;
+    border:         0px 0px 5px ;
+}
+mode-switcher {
+    expand:  true;
+    spacing: 0px ;
+}
+entry {
+    placeholder:       "Search";
+}

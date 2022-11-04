@@ -1,4 +1,4 @@
-@theme "default"
+//@theme "default"
 configuration {
 	modi: "window,drun,ssh";
 /*	font: "mono 12";*/
@@ -7,7 +7,7 @@ configuration {
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
 /*	show-icons: false;*/
-/*	terminal: "rofi-sensible-terminal";*/
+  	terminal: "alacritty";
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
 /*	run-command: "{cmd}";*/
@@ -146,3 +146,4 @@ configuration {
       sorting-method:    "name";
   }
 }
+@theme "/usr/share/rofi/themes/my_theme.rasi"
