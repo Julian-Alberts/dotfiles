@@ -1,0 +1,25 @@
+div#browser {
+    position: relative;
+}
+
+.toolbar.toolbar-droptarget.toolbar-mainbar.toolbar-visible.toolbar-large {
+    position: absolute;
+    bottom: 28px;
+    width: 100%;
+}
+
+div#main {
+    position: unset;
+}
+
+span.tabbar-wrapper {
+    margin-bottom: 35px;
+    display: block;
+}
+
+.toolbar.toolbar-droptarget.toolbar-statusbar.toolbar-medium {
+    --colorImageFg: var(
+    --colorFg);
+    background: var(
+    --colorBg);
+}

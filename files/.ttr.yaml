@@ -1,0 +1,29 @@
+groups:
+- name: git
+  key: g
+  tasks:
+  - name: git diff
+    key: d
+    cmd: git diff
+  - name: get add -A
+    key: A
+    cmd: git add -A
+  - name: git commit
+    key: c
+    cmd: git commit
+- name: cargo
+  key: c
+  tasks:
+  - name: test
+    key: t
+    cmd: cargo test
+    confirm: true # displays confirmation after command exited
+    clear: true # clears terminal before running command
+  - name: coverage
+    key: c
+    cmd: cargo tarpaulin --frozen --locked --out Lcov --out html --no-fail-fast --engine=Llvm && xdg-open tarpaulin-report.html
+    confirm: true
+    clear: true
+  - name: run
+    key: r
+    cmd: cargo run

@@ -1,12 +1,20 @@
+[theme]
 theme = "solarized-dark"
+[icons]
 icons = "awesome5"
+[icons.overrides]
+bat = "| |"
+bat_full = "|#|"
+bat_charging = "|^|"
+bat_discharging = "|v|"
+backlight = "O"
 
 [[block]]
 block = "disk_space"
 path = "/"
-alias = "/"
+#alias = "/"
 info_type = "available"
-unit = "GB"
+#unit = "GB"
 interval = 20
 warning = 20.0
 alert = 10.0
@@ -15,7 +23,7 @@ alert = 10.0
 block = "battery"
 #driver = "upower"
 #device = "BAT1"
-format = "{percentage} {time}"
+format = "$icon $percentage $time "
 full_format = "Full"
 
 [[block]]
@@ -32,6 +40,6 @@ block = "backlight"
 [[block]]
 block = "time"
 interval = 60
-format = "%a %d.%m.%y %R"
+format = " $icon $timestamp.datetime(f:'%a %Y.%m.%d %R') "
 
 

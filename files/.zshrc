@@ -56,7 +56,7 @@ z4h install ohmyzsh/ohmyzsh || return
 z4h init || return
 
 # Extend PATH.
-path=(~/bin $path)
+path=(~/bin /home/julian/.local/share/JetBrains/Toolbox/scripts $path)
 
 # Export environment variables.
 export GPG_TTY=$TTY
@@ -106,9 +106,10 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history)
 
 alias vim=nvim
 alias dtfs=~/dotfiles/dotfiles-tools/dtfs.py
-alias mount=udisksctl mount -b 
-alias umount=udisksctl unmount -b 
 
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+bindkey -s '^k' '^E^Uttr^M'
+

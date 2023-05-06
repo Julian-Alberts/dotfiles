@@ -25,16 +25,18 @@ font pango:monospace 8
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+bindsym $mod+l exec --no-startup-id i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+exec --on-startup-id picom
 
-for_window [class="^.*"] border pixel 5 
-smart_gaps on
-smart_borders on
-gaps inner 5 
-gaps outer 1
+for_window [class="^.*"] border pixel 2 
+#smart_gaps on
+#smart_borders on
+#gaps inner 5 
+#gaps outer 1
 default_border pixel 2
 default_floating_border normal
 
@@ -62,6 +64,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+b exec --no-startup-id firefox
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+n bar mode toggle notify
+bindsym $mod+Shift+n bar mode toggle
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
@@ -73,10 +77,10 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -159,7 +163,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-bindsym $mod+Shift+w exec ~/.cargo/bin/rename_workspace.js $(echo "" | dmenu -p 'New name >')
+bindsym $mod+Shift+w exec ~/.cargo/bin/rename_workspace.sh "$(echo "" | dmenu -p 'New name >')"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -204,6 +208,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 
 bar {
+    id status
     tray_output primary
     position bottom
     font pango:DejaVu Sans Mono, Font\ Awesome\ 5\ Free 12
@@ -225,6 +230,7 @@ bar {
 }
 
 bar {
+    id notify
     status_command /home/julian/.cargo/bin/i3_notify_bar --log-file /home/julian/.config/i3/i3_notify_bar.log --log-level DEBUG /home/julian/.config/i3/rules.conf
     font pango:DejaVu Sans Mono, Font\ Awesome\ 5\ Free 12
     position top

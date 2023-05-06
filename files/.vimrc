@@ -2,6 +2,8 @@ set relativenumber
 set number
 set foldmethod=syntax
 set foldlevel=10
+set expandtab
+set shiftwidth=4
 
 call plug#begin('~/.vim/plugged')
 let g:vimspector_enable_mappings = 'HUMAN'
