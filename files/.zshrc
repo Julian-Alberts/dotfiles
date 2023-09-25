@@ -69,6 +69,7 @@ z4h source ~/.env.zsh
 # This is just an example that you should delete. It does nothing useful.
 z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
 z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
+z4h load   ohmyzsh/ohmyzsh/plugins/thefuck
 
 # Define key bindings.
 z4h bindkey z4h-backward-kill-word  Ctrl+Backspace     Ctrl+H
@@ -113,3 +114,5 @@ source <(ng completion script)
 
 bindkey -s '^k' '^E^Uttr^M'
 
+
+[ -f "/home/julian/.ghcup/env" ] && source "/home/julian/.ghcup/env" # ghcup-env
